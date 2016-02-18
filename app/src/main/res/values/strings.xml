@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Dunzi</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="names">
+
+        <item>小爽</item>
+        <item>大爽</item>
+        <item>中爽</item>
+        <item>小红</item>
+        <item>中红</item>
+        <item>大红</item>
+        <item>小钱</item>
+        <item>大钱</item>
+        <item>中签</item>
+        <item>地方</item>
+        <item>撒的</item>
+        <item>辣么</item>
+        <item>dd</item>
+        <item>阿斯顿</item>
+        <item>哈哈</item>
+        <item>天赋</item>
+        <item>欧赔</item>
+        <item>考虑</item>
+
+
+    </string-array>
+</resources>
