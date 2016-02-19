@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import cn.sharesdk.onekeyshare.OnekeyShare;
+
 /**
  * author：WangShuang
  * Date: 2016/1/25 19:55
@@ -55,7 +57,7 @@ public class EnjoyAdapter extends BaseAdapter {
             convertView.setTag(new ViewHolde(convertView));
         }
         ViewHolde holde = (ViewHolde) convertView.getTag();
-        EnjoyEntity.ItemsEntity enjoyEntity = mList.get(position);
+        final EnjoyEntity.ItemsEntity enjoyEntity = mList.get(position);
 
         if (enjoyEntity.getUser() != null) {
             if (enjoyEntity.getUser().getLogin() != null) {
@@ -76,6 +78,7 @@ public class EnjoyAdapter extends BaseAdapter {
         holde.pinglun.setText("评论:" + enjoyEntity.getComments_count() + "");
         holde.fenxiang.setText("分享:" + enjoyEntity.getShare_count() + "");
 
+
         if (enjoyEntity.getImage() == null) {
             holde.bigImage.setVisibility(View.GONE);
         } else {
@@ -86,6 +89,30 @@ public class EnjoyAdapter extends BaseAdapter {
                     .into(holde.bigImage);
 
         }
+
+        holde.mShareImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OnekeyShare oks = new OnekeyShare();
+
+                oks.setText(enjoyEntity.getContent());
+                oks.setImageUrl(enjoyEntity.getImage());
+
+                //oks.setSiteUrl();
+               // oks.setSite();
+                oks.setTitle("分享文本");
+                oks.setAddress("北京海淀区");
+
+                //OnekeyShare 又有一些自定义的功能
+                //列如，直接使用某一个平台进行分享，不需要用户进行选择
+                //每一个平台都有一个类定义 直接获取就可以了
+                // oks.setPlatform(SinaWeibo.NAME);
+
+                //不允许用户编辑 直接分享
+                //oks.setSilent(true);
+                oks.show(mContext);
+            }
+        });
         return convertView;
     }
 
@@ -110,6 +137,8 @@ public class EnjoyAdapter extends BaseAdapter {
         private TextView pinglun;
         private TextView fenxiang;
 
+        private ImageView mShareImageView;
+
         public ViewHolde(View itemView) {
             userIcon = (ImageView) itemView.findViewById(R.id.enjoy_user_icon);
             usertName = (TextView) itemView.findViewById(R.id.enjoy_user_name);
@@ -120,6 +149,7 @@ public class EnjoyAdapter extends BaseAdapter {
             pinglun = (TextView) itemView.findViewById(R.id.enjoy_comments_count);
             fenxiang = (TextView) itemView.findViewById(R.id.enjoy_share_count);
 
+            mShareImageView = (ImageView) itemView.findViewById(R.id.enjoy_images_fenxiang);
         }
     }
 

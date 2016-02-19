@@ -47,6 +47,8 @@ public class EnjoyFragment extends Fragment implements Callback<EnjoyEntity>, Sw
     private List<EnjoyEntity.ItemsEntity> items;
     View footView;//
     List<EnjoyEntity.ItemsEntity> entityList;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,6 +67,10 @@ public class EnjoyFragment extends Fragment implements Callback<EnjoyEntity>, Sw
         //TODO:小bug需要处理
          footView.setVisibility(View.INVISIBLE);
 
+        //----------------------------------------------------
+        listView.setItemsCanFocus(true);
+
+        //----------------------------------------------------
 
 
         //TODO:回显数据库的资料
@@ -225,4 +231,24 @@ public class EnjoyFragment extends Fragment implements Callback<EnjoyEntity>, Sw
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+//    @Override
+//    public void onClick(View v) {
+//        //TODO:把软件分享给好友
+//        OnekeyShare oks=new OnekeyShare();
+//
+//        oks.setText("爽爽App是一个比较吊的软件");
+//        oks.setTitle("分享文本");
+//        oks.setAddress("北京海淀区");
+//
+//
+//        //OnekeyShare 又有一些自定义的功能
+//        //列如，直接使用某一个平台进行分享，不需要用户进行选择
+//        //每一个平台都有一个类定义 直接获取就可以了
+//        // oks.setPlatform(SinaWeibo.NAME);
+//
+//        //不允许用户编辑 直接分享
+//        //oks.setSilent(true);
+//        oks.show(getContext());
+//    }
 }

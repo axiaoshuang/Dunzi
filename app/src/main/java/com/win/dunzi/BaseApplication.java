@@ -5,6 +5,8 @@ import android.app.Application;
 import com.activeandroid.ActiveAndroid;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import cn.sharesdk.framework.ShareSDK;
+
 
 /**
  * author：WangShuang
@@ -18,6 +20,7 @@ public class BaseApplication  extends Application{
         super.onCreate();
         Fresco.initialize(this);
         ActiveAndroid.initialize(this);
+        ShareSDK.initSDK(this);
     }
         //清理工作
     @Override

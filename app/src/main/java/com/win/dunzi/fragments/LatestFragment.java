@@ -126,7 +126,6 @@ public class LatestFragment extends Fragment {
         recyclerView.setItemAnimator(animation);
 
 
-
         return view;
     }
 
