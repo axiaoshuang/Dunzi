@@ -96,7 +96,7 @@ public class EnjoyAdapter extends BaseAdapter {
                 OnekeyShare oks = new OnekeyShare();
 
                 oks.setText(enjoyEntity.getContent());
-                oks.setImageUrl(enjoyEntity.getImage());
+               // oks.setImageUrl(enjoyEntity.getImage());
 
                 //oks.setSiteUrl();
                // oks.setSite();
