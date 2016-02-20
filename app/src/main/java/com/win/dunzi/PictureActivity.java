@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import cn.jpush.android.api.JPushInterface;
 import retrofit.Callback;
 import retrofit.Response;
 import retrofit.Retrofit;
@@ -167,5 +168,17 @@ public class PictureActivity extends AppCompatActivity implements AbsListView.On
     @Override
     public void onFailure(Throwable t) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
     }
 }

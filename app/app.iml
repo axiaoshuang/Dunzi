@@ -113,6 +113,7 @@
     <orderEntry type="library" exported="" name="fbcore-0.8.1" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Foursquare-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Alipay-2.6.6" level="project" />
+    <orderEntry type="library" exported="" name="jpush-android-2.0.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Yixin-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Instagram-2.6.6" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-GooglePlus-2.6.6" level="project" />

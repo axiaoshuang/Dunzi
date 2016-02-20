@@ -5,6 +5,7 @@ import android.app.Application;
 import com.activeandroid.ActiveAndroid;
 import com.facebook.drawee.backends.pipeline.Fresco;
 
+import cn.jpush.android.api.JPushInterface;
 import cn.sharesdk.framework.ShareSDK;
 
 
@@ -21,6 +22,10 @@ public class BaseApplication  extends Application{
         Fresco.initialize(this);
         ActiveAndroid.initialize(this);
         ShareSDK.initSDK(this);
+
+
+        JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
+        JPushInterface.init(this);     		// 初始化 JPush
     }
         //清理工作
     @Override

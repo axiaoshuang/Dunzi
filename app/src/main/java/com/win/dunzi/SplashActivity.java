@@ -13,6 +13,8 @@ import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class SplashActivity extends AppCompatActivity implements Animation.AnimationListener, Runnable {
 
     private RelativeLayout rela;
@@ -26,6 +28,7 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         imageView= (ImageView) findViewById(R.id.splash_imageView);
 
         new Handler().postDelayed(this,2000);
+
     }
     public void startAnimation(){
 
@@ -79,6 +82,19 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
     @Override
     public void run() {
         jumpNextPage();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
     }
 }
 
